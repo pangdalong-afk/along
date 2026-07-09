@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEMU常规男装审版注意事项</title>
+<style>
+:root {
+  --primary: #e8541e;
+  --primary-light: #fff5f0;
+  --dark: #2c2c2c;
+  --gray: #666;
+  --light-gray: #f5f5f5;
+  --border: #e0e0e0;
+  --white: #ffffff;
+  --success: #52c41a;
+  --warning: #faad14;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--dark);
+  background: var(--light-gray);
+  line-height: 1.8;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 20px; }
+
+/* Header */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #ff7a45 100%);
+  color: var(--white);
+  padding: 50px 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.hero h1 { font-size: 2em; margin-bottom: 10px; }
+.hero .subtitle { font-size: 1.1em; opacity: 0.9; }
+.hero .meta { margin-top: 15px; font-size: 0.9em; opacity: 0.8; }
+
+/* TOC */
+.toc {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.toc h2 { font-size: 1.2em; margin-bottom: 15px; color: var(--primary); }
+.toc ul { list-style: none; }
+.toc li { margin: 6px 0; }
+.toc a {
+  text-decoration: none;
+  color: var(--dark);
+  display: block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.toc a:hover { background: var(--primary-light); color: var(--primary); }
+
+/* Section */
+.section {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.section h2 {
+  font-size: 1.4em;
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.section h3 {
+  font-size: 1.15em;
+  color: var(--dark);
+  margin-top: 25px;
+  margin-bottom: 12px;
+  padding-left: 12px;
+  border-left: 4px solid var(--primary);
+}
+.section h4 {
+  font-size: 1.05em;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  color: #333;
+}
+.section p, .section li { font-size: 0.95em; }
+.section ul, .section ol { padding-left: 25px; margin-bottom: 12px; }
+.section li { margin-bottom: 6px; }
+.section strong { color: var(--primary); }
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  font-size: 0.85em;
+  overflow-x: auto;
+  display: block;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+th {
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 600;
+}
+tr:nth-child(even) { background: var(--light-gray); }
+tr:hover { background: var(--primary-light); }
+
+/* Info Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin: 15px 0;
+}
+.card {
+  background: var(--primary-light);
+  border-radius: 8px;
+  padding: 15px 20px;
+  border-left: 4px solid var(--primary);
+}
+.card .card-title { font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+.card .card-body { font-size: 0.9em; color: var(--gray); }
+
+/* Tags */
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 600;
+  margin-right: 5px;
+}
+.tag-red { background: #fff1f0; color: #cf1322; }
+.tag-orange { background: #fff7e6; color: #d46b08; }
+.tag-green { background: #f6ffed; color: #389e0d; }
+.tag-blue { background: #e6f7ff; color: #096dd9; }
+
+/* Highlight Box */
+.highlight-box {
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin: 15px 0;
+}
+.highlight-box strong { color: #d48806; }
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--gray);
+  font-size: 0.85em;
+}
+.back-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2em;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(232,84,30,0.4);
+  transition: transform 0.2s;
+  z-index: 999;
+}
+.back-top:hover { transform: translateY(-3px); }
+
+@media (max-width: 768px) {
+  .container { padding: 10px; }
+  .hero { padding: 30px 20px; }
+  .hero h1 { font-size: 1.5em; }
+  .section { padding: 20px 15px; }
+  th, td { padding: 6px 8px; font-size: 0.8em; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+  <h1>TEMU 跨境电商管控文件</h1>
+  <div class="subtitle">常规男装审版注意事项</div>
+  <div class="meta">文档编号：240610 &nbsp;|&nbsp; 共18页 &nbsp;|&nbsp; 适用范围：TEMU所有现货渠道常规男装全品</div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h2>📑 目录</h2>
+  <ul>
+    <li><a href="#s1">1. 背景目的</a></li>
+    <li><a href="#s2">2. 适用范围</a></li>
+    <li><a href="#s3">3. 样衣退审标准</a></li>
+    <li><a href="#s4">4. 审版操作步骤（面料看点 / 版型尺寸 / 工艺 / 二次工艺）</a></li>
+    <li><a href="#s5">5. 注意事项（图物一致 / 外观品质 / 功能检测 / 安全风险 / 尺寸检测 / 评判方法 / 试穿人台 / 面料属性）</a></li>
+    <li><a href="#s6">6. 人台尺寸 / 各品类尺寸 / 跳码规则参考</a></li>
+  </ul>
+</div>
+
+<!-- Section 1 -->
+<div class="section" id="s1">
+  <h2>1. 背景目的</h2>
+  <p>规范TEMU平台服装现货尺码，确保产品尺码在各环节的标准化和质量稳定性，提升客户体验感。</p>
+</div>
+
+<!-- Section 2 -->
+<div class="section" id="s2">
+  <h2>2. 适用范围</h2>
+  <p>本标准适用于TEMU<strong>所有现货渠道常规男装全品</strong>。</p>
+</div>
+
+<!-- Section 3 -->
+<div class="section" id="s3">
+  <h2>3. 样衣退审标准</h2>
+
+  <h3>a. 面料退审</h3>
+  <p>薄透（特殊款除外），刺肤，掉毛严重，串色互染，劈裂，异味严重，回弹差等面料问题。</p>
+
+  <h3>b. 实物不符退审</h3>
+  <p>产品款式设计、图案、花型、版型、穿着效果等与系统图文不一致。</p>
+
+  <h3>c. 版型/尺寸风险退审</h3>
+  <p>领围无法过头，卡脖，卡夹，活动困难，衣长/袖长/围度超出/低于底线值，裤装无法过臀，无法过脚，卡裆，掉裆等版型问题。</p>
+
+  <h3>d. 工艺退审</h3>
+  <p>缝线未配色，止口爆线（多数体现在针织款），样衣破洞，印花脱落/晕染/沾色/异味/开裂/印花错误，绣花底扎肉/绣花错误；鸡眼脱落/烂口，金属扣粗糙/掉色/氧化，饰品拉扯断裂等工艺问题。</p>
+
+  <h3>e. 系统尺寸填写错误退审</h3>
+  <p>尺寸乱填，实物尺寸跟系统尺寸不符，全围填半围，漏必填尺寸，跳码规则错误等，驳回未及时修改等（<strong>两小时修改时长</strong>）裤内长必填。</p>
+
+  <h3>f. 货品属性错误退审</h3>
+  <p>货品属性内容需跟实际大货样衣一致（成分，材质，面料，版型，织造方式，护理说明，色值，风格，是否透明，图案等）。</p>
+
+  <h3>g. 唛头退审</h3>
+  <p>样衣未按实际尺码车码唛，未按系统选品尺码寄样（<strong>常规男装M码，大码男装2XL</strong>），未按要求车缝洗水唛，样衣码唛跟系统基码不匹配。</p>
+</div>
+
+<!-- Section 4 -->
+<div class="section" id="s4">
+  <h2>4. 审版操作步骤</h2>
+
+  <h3>4.1 面料看点</h3>
+  <table>
+    <tr><th>项目</th><th>标准要求</th></tr>
+    <tr><td><strong>面料薄透</strong></td><td>常规服饰不允许透（特殊风格和度假、沙滩装、家居服除外）。薄透款需在C端体现薄透效果。</td></tr>
+    <tr><td><strong>面料起球</strong></td><td>样衣表/里面有明显起毛球现象。</td></tr>
+    <tr><td><strong>面料刺肤</strong></td><td>样衣穿着时面料刺肤，舒适感差。</td></tr>
+    <tr><td><strong>面料掉毛</strong></td><td>不接受严重掉毛面料，表面手摸掉毛，或手抖样衣掉毛为严重掉毛，其余根据实际面料情况来定。（面料有羊羔绒、抓毛卫衣等）</td></tr>
+    <tr><td><strong>串色互染</strong></td><td>深/浅面料拼接，不接受明显互染情况。</td></tr>
+    <tr><td><strong>面料劈裂</strong></td><td>纱线滑移：紧身、合体版，易受力部位，面料纰裂应满足60N拉力，纰裂≤6mm。宽松款适当放松，根据实际款式来定。</td></tr>
+    <tr><td><strong>异味</strong></td><td>不接受样衣距离10CM处能轻松闻到异味；面料有：皮革、毛呢、皮草、牛仔、毛衣、羽绒等。</td></tr>
+    <tr><td><strong>色差</strong></td><td>样衣/图片目视无明显色差。</td></tr>
+  </table>
+
+  <h3>4.2 版型/尺寸</h3>
+
+  <h4>版型要求</h4>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">肩</div>
+      <div class="card-body">肩斜角度要符合人体</div>
+    </div>
+    <div class="card">
+      <div class="card-title">夹圈</div>
+      <div class="card-body">不卡夹，不起空，夹圈圆顺</div>
+    </div>
+    <div class="card">
+      <div class="card-title">袖臂</div>
+      <div class="card-body">袖山高与袖肥匹配，不影响抬手；袖臂围尺寸合适，穿着袖不严重起斜扭</div>
+    </div>
+    <div class="card">
+      <div class="card-title">衣身平衡</div>
+      <div class="card-body">穿好前后片要顺，不能起吊严重</div>
+    </div>
+    <div class="card">
+      <div class="card-title">前后浪</div>
+      <div class="card-body">浪底不起明显猫须，后浪底不勾裆；整体裆底不卡裆，不吊裆</div>
+    </div>
+  </div>
+
+  <h4>风险尺寸（底线值）</h4>
+  <table>
+    <tr><th>部位</th><th>常规男装（M码）</th><th>大码男装（2XL）</th><th>说明</th></tr>
+    <tr><td><strong>领围拉量</strong></td><td>≥ 62 CM</td><td>≥ 65 CM</td><td>平顺，不能外翻起波浪</td></tr>
+    <tr><td><strong>腰围拉量</strong></td><td>≥ 102 CM</td><td>≥ 120 CM</td><td>拉量偏小不好过臀</td></tr>
+    <tr><td><strong>脚围拉量</strong></td><td>≥ 32 CM</td><td>≥ 35 CM</td><td>确保过脚底不影响穿着</td></tr>
+    <tr><td><strong>帽</strong></td><td colspan="2">帽高35cm，帽宽28cm左右（特殊款除外）</td><td>—</td></tr>
+  </table>
+
+  <h3>4.3 工艺/二次工艺</h3>
+
+  <h4>工艺</h4>
+  <table>
+    <tr><th>项目</th><th>标准要求</th></tr>
+    <tr><td><strong>拼缝</strong></td><td>拼缝不可拉断线，常规涤棉PP线，不可用丝线，针织接受打四线，梭织接受五线，不接受打三线。</td></tr>
+    <tr><td><strong>橡筋</strong></td><td>包橡筋款橡筋不起扭，橡筋两侧需定位（最少两处），避免橡筋起扭。</td></tr>
+    <tr><td><strong>钉扣</strong></td><td>钉扣牢固，不可只钉在单层面料上（装饰扣除外），完成线结不外露。</td></tr>
+    <tr><td><strong>扣位</strong></td><td>扣与扣眼上下对位，接受误差0.2CM。</td></tr>
+    <tr><td><strong>专机</strong></td><td>四合扣，内加胶垫（单层面料加织带或其它，特殊款除外）。</td></tr>
+    <tr><td><strong>气眼</strong></td><td>气眼需烫衬和底加胶垫；单层面料开直眼，底层烫衬加膜（特殊款除外）。</td></tr>
+    <tr><td><strong>锁眼</strong></td><td>正常男左女右，锁眼线迹均匀不稀，面不起线毛。</td></tr>
+  </table>
+
+  <h4>二次工艺</h4>
+  <ul>
+    <li><strong>印花（胶印）</strong>：颜色准确，印花不脱落，不堆浆，无沙眼，不互染，不脏，不破，手感不可过硬、过黏。</li>
+    <li><strong>水印/数码印</strong>：颜色清晰，无漏印、无杂色、无渗色。</li>
+    <li><strong>洗水</strong>：牛仔洗水色系，磨破效果等。</li>
+    <li><strong>洗水唛</strong>：按要求车缝洗水唛，码唛。</li>
+  </ul>
+</div>
+
+<!-- Section 5 -->
+<div class="section" id="s5">
+  <h2>5. 注意事项</h2>
+
+  <h3>5.1 图物一致</h3>
+  <p>确保产品款式、面料、辅料、工艺、包装、标识与系统图文描述及批核实样一致。</p>
+  <table>
+    <tr><th>审核项</th><th>审核内容</th></tr>
+    <tr><td><strong>款式</strong></td><td>审核产品款式设计、图案、花型等与系统图文是否一致</td></tr>
+    <tr><td><strong>面料</strong></td><td>审核产品各部位面料材质、颜色、手感、弹力、纹路、水洗效果；花型图案样式、大小、方向、位置等细节</td></tr>
+    <tr><td><strong>辅料</strong></td><td>审核产品所用辅料、配件的材质、形状、大小、色泽；使用数量、位置等</td></tr>
+    <tr><td><strong>工艺</strong></td><td>审核产品各部位车缝工艺是否与工艺单要求一致</td></tr>
+    <tr><td><strong>包装</strong></td><td>审核产品包装袋样式、大小；标签纸内容；包装内是否有洗水石、剪刀等非产品异物</td></tr>
+    <tr><td><strong>标识</strong></td><td>审核产品唛头成分信息、成分比例、洗护标识、原产国信息、尺码是否与系统图文一致</td></tr>
+  </table>
+
+  <h3>5.2 外观品质</h3>
+  <p>外观检验以 <strong>D65标准光源</strong>下，手臂伸直距离肉眼评判为准。</p>
+  <table>
+    <tr><th>审核项</th><th>审核内容</th></tr>
+    <tr><td><strong>整体外观</strong></td><td>审核产品包装折叠是否整齐、包装袋大小是否合适</td></tr>
+    <tr><td><strong>面辅料外观</strong></td><td>审核产品面料是否有破洞、破损、抽纱、断纱、色纱、杂纱、污迹、水渍、压痕、折痕、掉色、印花升华、沾色、掉绒、掉毛、掉粉、掉珠片、起毛、起球、毛边、脱层等；辅件是否有破损、断裂、脱落、变形、锈斑、掉漆、掉涂层、黄变、脱层、溢胶等</td></tr>
+    <tr><td><strong>车缝外观</strong></td><td>审核产品车缝位是否有堆线、落坑、跳针、漏针、线头、散线、散边、散口、起皱、起扭、打折、不平服、不对称、针洞、线迹歪斜、扣眼歪斜、扣位不均；粘合衬气泡、外露、脱层等</td></tr>
+    <tr><td><strong>薄透效果</strong></td><td>产品明显薄透的，审核薄透效果与系统图片是否相符</td></tr>
+    <tr><td><strong>熨烫效果</strong></td><td>审核产品表面是否有烫痕，如烫焦、烫黄、烫死折等</td></tr>
+  </table>
+
+  <h3>5.3 功能检测</h3>
+  <ul>
+    <li><strong>功能性配件</strong>：审核拉链、四合扣、魔术贴等品质，确保开合顺畅不卡顿无尖端无利边，模拟正常使用5次不损坏。</li>
+    <li><strong>车缝牢固度</strong>：审核所有车缝位牢固度，无正常使用或拉伸至150%出现断线、纰裂、爆口、散口；关键加固部位有打枣。</li>
+    <li><strong>异味</strong>：审核产品及包装是否有明显刺激性异味。如有，通过随机3人评判以2人相同结论为准。</li>
+  </ul>
+
+  <h3>5.4 安全风险</h3>
+  <p>确保产品不出现严重瑕疵质量风险。（审核标准同5.3功能检测）</p>
+
+  <h3>5.5 尺寸检测</h3>
+  <p>审核样衣尺寸跟跳码规则，重点检验如下尺寸：</p>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">上装</div>
+      <div class="card-body">领围、领围拉度、肩宽、胸围、腰围、脚围、衣长、袖长、袖肥、袖口阔、夹圈</div>
+    </div>
+    <div class="card">
+      <div class="card-title">下装</div>
+      <div class="card-body">腰围、臀围、腿围、脚围、前浪、后浪、裤长、裙长、裤内长</div>
+    </div>
+  </div>
+  <ul>
+    <li>套头穿款式领围拉度尺寸需满足：<strong>常规男装≥62cm；大码男装≥65cm</strong></li>
+    <li>衣服铺平整，避免拉扯并按照系统要求方法正确测量</li>
+    <li>尺寸超公差的需进一步试穿人台评估能否接受</li>
+    <li>产品对称部位需审核尺寸长短偏差，是否对外观质量造成明显影响</li>
+  </ul>
+
+  <h3>5.6 评判方法</h3>
+  <table>
+    <tr><th>项目</th><th>评判方法</th></tr>
+    <tr><td><strong>色差</strong></td><td>D65光源下用苹果手机或苹果显示屏对比图片或样衣颜色为准</td></tr>
+    <tr><td><strong>异味</strong></td><td>随机≥3名独立评估，3人一致结果为准</td></tr>
+    <tr><td><strong>薄透</strong></td><td>套人台与图片薄透效果一致的接受；人台薄透明显但图片完全看不出薄透的不接受；薄透设计款式（如钩织款）接受</td></tr>
+    <tr><td><strong>刺痒</strong></td><td>以样衣为准，明显比样衣严重且难以接受的不接受</td></tr>
+    <tr><td><strong>掉毛/掉绒/掉粉</strong></td><td>超过3级不接受</td></tr>
+    <tr><td><strong>拉伸断线</strong></td><td>成衣拉伸至150%不断线为准；内衣、泳衣、连体衣等弹力大的布料拉伸至170%不断线为准</td></tr>
+  </table>
+
+  <h3>5.7 试穿人台</h3>
+  <p>通过试穿人台对尺寸、版型、工艺、薄透、安全风险等样衣效果评估结果。</p>
+
+  <h3>5.8 面料属性</h3>
+  <p>面料属性评估按要求来测试，按测试结果填写系统。</p>
+  <div class="highlight-box">
+    <strong>注意：</strong>微弹、无弹面料：a. 不适用于运动服；b. 不适用于修身、紧身款开襟上衣或裤子；c. 不适用于合体、修身、紧身款的T恤、套头衫类。
+  </div>
+  <table>
+    <tr><th>面料</th><th>弹力拉伸值</th></tr>
+    <tr><td>无弹</td><td>0%-4%</td></tr>
+    <tr><td>微弹</td><td>5%-30%</td></tr>
+    <tr><td>中弹</td><td>31%-69%</td></tr>
+    <tr><td>高弹</td><td>70%-100%</td></tr>
+  </table>
+</div>
+
+<!-- Section 6 -->
+<div class="section" id="s6">
+  <h2>6. 人台尺寸 / 各品类尺寸 / 跳码规则参考</h2>
+
+  <h3>6.2 M码原型尺寸 / 人台各部位尺寸</h3>
+  <table>
+    <tr><th colspan="4" style="background:#ff7a45;">美国体常规男装 M 码人台尺寸</th></tr>
+    <tr><td colspan="2"><strong>适用客群</strong></td><td colspan="2">男常规体型</td></tr>
+    <tr><td colspan="2"><strong>目标客群范围</strong></td><td colspan="2">身高 170cm-190cm</td></tr>
+    <tr><td colspan="2"><strong>开发码段</strong></td><td colspan="2">XXS / XS / S / M / L / XL / XXL / XXXL</td></tr>
+    <tr><td colspan="2"><strong>基码</strong></td><td colspan="2">M</td></tr>
+    <tr><th>序号</th><th>部位</th><th>人台量度方式描述</th><th>人台净尺寸(cm)</th></tr>
+    <tr><td>1</td><td>身高</td><td>头顶至脚底的垂直距离</td><td>177.8</td></tr>
+    <tr><td>2</td><td>全身长</td><td>后中颈点至脚底的垂直距离</td><td>153</td></tr>
+    <tr><td>3</td><td>头围</td><td>头部最宽处围量一周的长度</td><td>58</td></tr>
+    <tr><td>4</td><td>前颈至腰</td><td>前中颈点至腰围线的曲线距离</td><td>40</td></tr>
+    <tr><td>5</td><td>后颈至腰</td><td>后中颈点至腰围线的曲线距离</td><td>45.5</td></tr>
+    <tr><td>6</td><td>颈根围</td><td>经前后中颈点和左右肩颈点围量一周的长度</td><td>42</td></tr>
+    <tr><td>7</td><td>肩宽</td><td>左肩点至右肩点的直线距离</td><td>44.3</td></tr>
+    <tr><td>8</td><td>胸围</td><td>经胸点水平围量一周的长度</td><td>98</td></tr>
+    <tr><td>9</td><td>下胸围</td><td>经胸底部水平围量一周的长度（胸围下5CM）</td><td>91.5</td></tr>
+    <tr><td>10</td><td>腰围</td><td>经腰围线围量一周的长度</td><td>82</td></tr>
+    <tr><td>11</td><td>下坐围(臀围)</td><td>经下坐围线水平围量一周的长度</td><td>98</td></tr>
+    <tr><td>12</td><td>全浪</td><td>从腰围线前中腰点经浪底至后中腰点的距离</td><td>73</td></tr>
+    <tr><td>13</td><td>全浪</td><td>从前领中点经过浪底至后领中点的长度</td><td>159</td></tr>
+    <tr><td>14</td><td>内长</td><td>从大腿根部沿腿内侧至脚底的距离</td><td>81</td></tr>
+    <tr><td>15</td><td>大腿围</td><td>经大腿根部下2.5cm水平围量一周的长度</td><td>57</td></tr>
+    <tr><td>16</td><td>膝围</td><td>浪底往下33cm一圈</td><td>42</td></tr>
+    <tr><td>17</td><td>脚口围</td><td>脚踝上围量一圈</td><td>25.5</td></tr>
+    <tr><td>18</td><td>手臂长</td><td>从肩点经肘部至手腕关节的距离</td><td>62</td></tr>
+    <tr><td>19</td><td>臂围</td><td>平齐胸点水平围量手臂一周的长度</td><td>32.5</td></tr>
+    <tr><td>20</td><td>肘围</td><td>袖山顶下31CM度一圈</td><td>30</td></tr>
+    <tr><td>21</td><td>袖口</td><td>袖口围度一圈</td><td>18.5</td></tr>
+  </table>
+
+  <h3>6.3 男装品类基础尺寸参考（M码）</h3>
+  <p style="color:var(--gray);font-size:0.9em;">以下品类以M码为基码，样衣涉及部位的参考尺寸如下（单位：CM），图片仅供参考。最终尺寸需结合图片效果和面料属性。</p>
+
+  <!-- 背心 -->
+  <h4>背心</h4>
+  <table>
+    <tr><th>类别</th><th>前衣长</th><th>肩宽</th><th>胸围</th><th>袖长</th></tr>
+    <tr><td>运动高弹紧身背心</td><td>66-70</td><td>/</td><td>92-88</td><td>/</td></tr>
+    <tr><td>修身背心</td><td>68-72</td><td>/</td><td>96-102</td><td>/</td></tr>
+    <tr><td>常规款</td><td>70-74</td><td>/</td><td>106±</td><td>/</td></tr>
+    <tr><td>宽松款</td><td>72-75</td><td>/</td><td>110-112</td><td>/</td></tr>
+  </table>
+
+  <!-- T恤 -->
+  <h4>T恤</h4>
+  <table>
+    <tr><th>类别</th><th>前衣长</th><th>肩宽</th><th>胸围</th><th>夹圈</th><th>短袖/长袖</th><th>袖肥</th><th>短袖口/长袖口</th></tr>
+    <tr><td>Polo衫</td><td>72±</td><td>46</td><td>108-110</td><td>52±</td><td>22/64</td><td>40±</td><td>37/25</td></tr>
+    <tr><td>中弹修身款</td><td>72±</td><td>46</td><td>106±</td><td>51±</td><td>22/64</td><td>39±</td><td>36/25</td></tr>
+    <tr><td>常规款</td><td>72±</td><td>46-47</td><td>108-110</td><td>52±</td><td>23/64</td><td>40±</td><td>37/25</td></tr>
+    <tr><td>微落肩宽松款</td><td>73±</td><td>54</td><td>112-114</td><td>50±</td><td>24/59</td><td>43±</td><td>42/25</td></tr>
+  </table>
+
+  <!-- 卫衣 -->
+  <h4>卫衣（不加绒）<span class="tag tag-orange">加绒款需按绒的厚薄适当增减</span></h4>
+  <table>
+    <tr><th>类别</th><th>前衣长</th><th>肩宽</th><th>胸围</th><th>夹圈</th><th>袖长</th><th>袖肥</th><th>袖口围(罗纹)</th></tr>
+    <tr><td>常规圆领</td><td>73-74</td><td>46-48</td><td>112-114</td><td>54±</td><td>65</td><td>42±</td><td>20-21</td></tr>
+    <tr><td>常规连帽</td><td>73-74</td><td>46-48</td><td>114-116</td><td>55±</td><td>65</td><td>42±</td><td>20-21</td></tr>
+    <tr><td>正肩宽松款</td><td>73-74</td><td>48±</td><td>≥116</td><td>55±</td><td>65</td><td>43±</td><td>20-21</td></tr>
+    <tr><td>落肩宽松款</td><td>73-74</td><td>54-60</td><td>≥118</td><td>52±</td><td>61-58</td><td>45±</td><td>20-21</td></tr>
+  </table>
+
+  <!-- 短袖开襟衬衫 -->
+  <h4>短袖开襟衬衫</h4>
+  <table>
+    <tr><th>类别</th><th>前衣长</th><th>肩宽</th><th>胸围</th><th>袖长</th><th>夹圈</th><th>袖肥</th><th>袖口</th><th>下领围(扣好度)</th></tr>
+    <tr><td>修身正装(有弹)</td><td>74±</td><td>46</td><td>112-108</td><td>24±</td><td>53±</td><td>41±</td><td>38±</td><td>45-46</td></tr>
+    <tr><td>常规款</td><td>74±</td><td>48±</td><td>114±</td><td>24±</td><td>54±</td><td>42±</td><td>39±</td><td>45-46</td></tr>
+    <tr><td>宽松款</td><td>75±</td><td>48-60</td><td>116-120</td><td>25±</td><td>/</td><td>46±</td><td>43±</td><td>45-46</td></tr>
+  </table>
+
+  <!-- 长袖开襟衬衫 -->
+  <h4>长袖开襟衬衫</h4>
+  <table>
+    <tr><th>类别</th><th>前衣长</th><th>肩宽</th><th>胸围</th><th>袖长</th><th>夹圈</th><th>袖肥</th><th>袖口(扣好度)</th><th>下领围(扣好度)</th></tr>
+    <tr><td>修身商务(有弹)</td><td>74±</td><td>46</td><td>112-108</td><td>64±</td><td>53±</td><td>40±</td><td>22.5</td><td>45-46</td></tr>
+    <tr><td>常规款</td><td>74±</td><td>48±</td><td>114±</td><td>64±</td><td>54±</td><td>42±</td><td>23</td><td>45-46</td></tr>
+    <tr><td>宽松款</td><td>75±</td><td>48-60</td><td>116-120</td><td>65-58</td><td>/</td><td>46±</td><td>23</td><td>45-46</td></tr>
+  </table>
+
+  <!-- 夹克 -->
+  <h4>夹克类外套</h4>
+  <table>
+    <tr><th>类别</th><th>前衣长</th><th>肩宽</th><th>胸围</th><th>脚围(罗纹)</th><th>夹圈</th><th>袖长</th><th>袖肥</th><th>罗纹袖口</th></tr>
+    <tr><td>常规款</td><td>69-72</td><td>48±</td><td>116-118</td><td>98</td><td>55±</td><td>65±</td><td>44±</td><td>21-22</td></tr>
+    <tr><td>宽松款</td><td>70-73</td><td>48-50</td><td>120-122</td><td>102</td><td>56±</td><td>65±</td><td>45±</td><td>21-22</td></tr>
+    <tr><td>薄绒常规款</td><td>70-74</td><td>48-50</td><td>120±</td><td>100</td><td>56±</td><td>65±</td><td>45±</td><td>21-22</td></tr>
+    <tr><td>薄绒宽松款</td><td>70-73</td><td>50-52</td><td>122-128</td><td>102</td><td>57±</td><td>65±</td><td>46±</td><td>21-22</td></tr>
+  </table>
+
+  <!-- 西装外套 -->
+  <h4>西装外套 <span class="tag tag-blue">面布有弹性，里布需同步有弹</span></h4>
+  <table>
+    <tr><th>类别</th><th>前衣长</th><th>肩宽</th><th>胸围</th><th>夹圈</th><th>袖肥</th><th>袖长</th><th>袖口</th></tr>
+    <tr><td>修身款</td><td>70-74</td><td>46±</td><td>108±</td><td>53.5±</td><td>39</td><td>63-64</td><td>26</td></tr>
+    <tr><td>常规款</td><td>70-74</td><td>46-47</td><td>108-110</td><td>54±</td><td>40</td><td>63-64</td><td>26.5</td></tr>
+    <tr><td>宽松休闲款</td><td>72-74</td><td>47-48</td><td>112-116</td><td>55±</td><td>41</td><td>63-64</td><td>28-29</td></tr>
+  </table>
+
+  <!-- 棉衣/羽绒 -->
+  <h4>棉衣/羽绒 <span class="tag tag-orange">根据棉的厚薄/款式宽松程度适量调整</span></h4>
+  <table>
+    <tr><th>类别</th><th>前衣长</th><th>肩宽</th><th>胸围</th><th>夹圈</th><th>袖肥</th><th>袖长</th><th>袖口(橡筋)</th></tr>
+    <tr><td>超薄款</td><td>70-76</td><td>48-50</td><td>116-118</td><td>55±</td><td>46±</td><td>66±</td><td>21-23</td></tr>
+    <tr><td>常规款</td><td>72-78</td><td>50±</td><td>120-126</td><td>56±</td><td>47±</td><td>66±</td><td>21-23</td></tr>
+    <tr><td>厚款</td><td>72-78</td><td>52±</td><td>128±</td><td>57±</td><td>48±</td><td>66±</td><td>21-23</td></tr>
+  </table>
+
+  <!-- 毛衫 -->
+  <h4>毛衫 <span class="tag tag-blue">≥中弹</span></h4>
+  <table>
+    <tr><th>类别</th><th>前衣长</th><th>肩宽</th><th>胸围</th><th>夹圈</th><th>袖肥</th><th>袖长</th><th>袖口</th></tr>
+    <tr><td>套头修身款</td><td>69-72</td><td>46±</td><td>102-104</td><td>52±</td><td>34±</td><td>64±</td><td>20±</td></tr>
+    <tr><td>套头常规款</td><td>72±</td><td>46±</td><td>108±</td><td>53±</td><td>36±</td><td>64±</td><td>20±</td></tr>
+    <tr><td>不加绒常规开衫</td><td>69-72</td><td>46-48</td><td>106-110</td><td>53±</td><td>36±</td><td>64±</td><td>20±</td></tr>
+    <tr><td>不加绒宽松开衫</td><td>70-74</td><td>48-50</td><td>112-116</td><td>54±</td><td>36±</td><td>64±</td><td>21±</td></tr>
+    <tr><td>加薄绒常规开衫</td><td>70-74</td><td>48-50</td><td>110-114</td><td>54±</td><td>38±</td><td>64±</td><td>21±</td></tr>
+  </table>
+
+  <!-- 毛呢大衣 -->
+  <h4>毛呢大衣</h4>
+  <table>
+    <tr><th>类别</th><th>前衣长</th><th>肩宽</th><th>胸围</th><th>夹圈</th><th>袖肥</th><th>袖长</th><th>袖口</th></tr>
+    <tr><td>双面呢(无里布)</td><td>85±</td><td>46-48</td><td>110-112</td><td>53±</td><td>40±</td><td>64±</td><td>26</td></tr>
+    <tr><td>薄款(修身)</td><td>84±</td><td>48±</td><td>112-114</td><td>54±</td><td>42±</td><td>64±</td><td>27</td></tr>
+    <tr><td>常规款</td><td>78±</td><td>48±</td><td>116±</td><td>55-56</td><td>43±</td><td>64±</td><td>27</td></tr>
+    <tr><td>加薄棉常规款</td><td>78±</td><td>48-50</td><td>118-120</td><td>56-57</td><td>44±</td><td>64±</td><td>28</td></tr>
+  </table>
+
+  <!-- 风衣 -->
+  <h4>风衣</h4>
+  <table>
+    <tr><th>类别</th><th>前衣长</th><th>肩宽</th><th>胸围</th><th>夹圈</th><th>袖肥</th><th>袖长</th><th>袖口</th></tr>
+    <tr><td>常规款(正常肩)</td><td>80</td><td>48±</td><td>115-120</td><td>55±</td><td>44±</td><td>65±</td><td>28</td></tr>
+    <tr><td>常规款(插肩)</td><td>104</td><td>/</td><td>118-122</td><td>/</td><td>46±</td><td>80±</td><td>29</td></tr>
+    <tr><td>宽松休闲(插肩)</td><td>106</td><td>/</td><td>122-126</td><td>/</td><td>46-48</td><td>80±</td><td>30</td></tr>
+  </table>
+
+  <!-- 马甲 -->
+  <h4>马甲</h4>
+  <table>
+    <tr><th>类别</th><th>衣长</th><th>胸围</th><th>肩宽</th><th>袖长</th></tr>
+    <tr><td>西装马甲</td><td>66-68</td><td>106±</td><td>38</td><td>/</td></tr>
+    <tr><td>休闲马甲</td><td>66-70</td><td>116±</td><td>44-48</td><td>/</td></tr>
+    <tr><td>棉马甲(结合棉的厚度)</td><td>68-72</td><td>116-124</td><td>48</td><td>/</td></tr>
+  </table>
+
+  <!-- 长袍 -->
+  <h4>长袍</h4>
+  <div class="highlight-box">
+    <strong>注意：</strong>立领、衬衣领的款需着重关注颈围跟胸围尺寸，全身长作参考，美码M码人体净颈围尺寸40CM±；长袍衣长跳码——3CM，美码M码长袍衣长不能短于138CM。
+  </div>
+  <table>
+    <tr><th>类别</th><th>前衣长</th><th>肩宽</th><th>胸围</th><th>夹圈</th><th>长袖</th><th>袖臂围</th><th>长袖口</th><th>下领围(扣好度)</th><th>上领围尺寸</th><th>全身长(后中颈点到脚底)</th></tr>
+    <tr><td>常规</td><td>138~140</td><td>48±</td><td>117~120</td><td>55±</td><td>64±</td><td>41</td><td>28±</td><td>45-46</td><td>42</td><td>153</td></tr>
+  </table>
+
+  <!-- 卫裤 -->
+  <h4>卫裤</h4>
+  <div class="highlight-box">
+    <strong>注意：</strong>束脚裤裤长短于100CM需标注为9分裤，直筒裤裤长短于102CM需标注为9分裤。腰抽绳长度不短于140cm。
+  </div>
+  <table>
+    <tr><th>类别</th><th>裤长</th><th>裤内长</th><th>橡筋腰围</th><th>腰围拉量</th><th>臀围</th><th>大腿围</th><th>束脚口</th><th>前浪</th><th>后浪</th></tr>
+    <tr><td>常规款</td><td>104-106</td><td>74-76</td><td>76±</td><td>≥102</td><td>106-108</td><td>65±</td><td>26-27</td><td>30</td><td>39.5</td></tr>
+    <tr><td>宽松款</td><td>104-106</td><td>74-76</td><td>76±</td><td>≥102</td><td>108-112</td><td>66±</td><td>26-27</td><td>31</td><td>40</td></tr>
+    <tr><td>加绒常规款</td><td>104-106</td><td>74-76</td><td>76±</td><td>≥102</td><td>108-112</td><td>66±</td><td>26-27</td><td>31</td><td>41</td></tr>
+  </table>
+
+  <!-- 牛仔裤 -->
+  <h4>牛仔裤-中腰</h4>
+  <table>
+    <tr><th>类别</th><th>裤长</th><th>裤内长</th><th>腰围</th><th>臀围</th><th>大腿围</th><th>脚口</th><th>前浪</th><th>后浪</th></tr>
+    <tr><td>中弹紧身牛仔</td><td>102±</td><td>74±</td><td>78-80</td><td>96-98</td><td>58±</td><td>28-30</td><td>27</td><td>39</td></tr>
+    <tr><td>微弹常规牛仔</td><td>104±</td><td>76±</td><td>82±</td><td>100-102</td><td>60±</td><td>32±</td><td>27.5</td><td>39</td></tr>
+    <tr><td>无弹常规牛仔</td><td>105±</td><td>76±</td><td>84±</td><td>102-104</td><td>62±</td><td>36±</td><td>28</td><td>40</td></tr>
+    <tr><td>无弹宽松牛仔</td><td>106±</td><td>76±</td><td>84±</td><td>106±</td><td>64±</td><td>/</td><td>30</td><td>41</td></tr>
+  </table>
+
+  <!-- 梭织休闲裤 -->
+  <h4>梭织休闲裤</h4>
+  <div class="highlight-box">
+    <strong>注意：</strong>束脚裤裤长短于100CM需标注为9分裤，直筒裤裤长短于102CM需标注为9分裤。腰抽绳长度不短于140cm。
+  </div>
+  <table>
+    <tr><th>类别</th><th>裤长</th><th>裤内长</th><th>腰围</th><th>腰围拉量</th><th>臀围</th><th>大腿围</th><th>脚口</th><th>前浪</th><th>后浪</th></tr>
+    <tr><td>常规束脚裤</td><td>104</td><td>75</td><td>橡筋76±</td><td>≥102</td><td>108±</td><td>65±</td><td>26-27</td><td>30</td><td>39.5</td></tr>
+    <tr><td>宽松束脚裤</td><td>106</td><td>76</td><td>橡筋76±</td><td>≥102</td><td>108-112</td><td>66±</td><td>26-27</td><td>31</td><td>40</td></tr>
+    <tr><td>常规休闲裤</td><td>106</td><td>77</td><td>常规84±</td><td>≥102</td><td>108±</td><td>65±</td><td>/</td><td>29.5</td><td>39.5</td></tr>
+  </table>
+
+  <!-- 西裤 -->
+  <h4>西裤</h4>
+  <table>
+    <tr><th>类别</th><th>裤长</th><th>裤内长</th><th>腰围</th><th>臀围</th><th>大腿围</th><th>脚口</th><th>前浪</th><th>后浪</th></tr>
+    <tr><td>修身西裤(微弹)</td><td>104±</td><td>76</td><td>84±</td><td>102±</td><td>61±</td><td>32±</td><td>29</td><td>40</td></tr>
+    <tr><td>常规西裤(无弹)</td><td>106±</td><td>78</td><td>84±</td><td>104±</td><td>62±</td><td>36±</td><td>29.5</td><td>40.5</td></tr>
+    <tr><td>宽松西裤(无弹)</td><td>107±</td><td>78</td><td>84-86</td><td>106±</td><td>64±</td><td>40±</td><td>30</td><td>41</td></tr>
+  </table>
+
+  <!-- 短裤 -->
+  <h4>短裤 <span class="tag tag-orange">M码腰节抽绳长度不短于140cm</span></h4>
+  <table>
+    <tr><th>类别</th><th>裤长</th><th>裤内长</th><th>橡筋腰围</th><th>腰围拉量</th><th>臀围</th><th>前浪</th><th>后浪</th></tr>
+    <tr><td>常规短裤</td><td>48-52</td><td>19±</td><td>76±</td><td>≥102</td><td>108±</td><td>30.5</td><td>41</td></tr>
+    <tr><td>宽松短裤</td><td>48-52</td><td>19±</td><td>76±</td><td>≥102</td><td>108-112</td><td>31</td><td>42</td></tr>
+    <tr><td>梭织商务短裤</td><td>48±</td><td>19±</td><td>76±</td><td>≥102</td><td>106-110</td><td>30.5</td><td>41</td></tr>
+  </table>
+
+  <!-- 运动紧身款 -->
+  <h4>运动紧身款</h4>
+  <p><strong>上衣（高弹）</strong></p>
+  <table>
+    <tr><th>类别</th><th>前衣长</th><th>肩宽</th><th>胸围</th><th>袖长</th><th>袖肥</th><th>袖口</th></tr>
+    <tr><td>紧身正常肩短袖</td><td>68-72</td><td>43-46</td><td>90-94</td><td>21</td><td>35</td><td>33</td></tr>
+    <tr><td>紧身插肩短袖</td><td>68-72</td><td>/</td><td>90-94</td><td>35</td><td>35</td><td>33</td></tr>
+    <tr><td>紧身正常肩长袖</td><td>68-72</td><td>43-46</td><td>90-94</td><td>62-64</td><td>35</td><td>20</td></tr>
+    <tr><td>紧身插肩长袖</td><td>68-72</td><td>/</td><td>90-94</td><td>76-78</td><td>35</td><td>20</td></tr>
+  </table>
+  <p style="margin-top:15px;"><strong>裤子（高弹）</strong></p>
+  <table>
+    <tr><th>类别</th><th>裤长</th><th>裤内长</th><th>橡筋腰围</th><th>腰围拉量</th><th>臀围</th><th>前浪</th><th>后浪</th></tr>
+    <tr><td>紧身短裤</td><td>40-44</td><td>16</td><td>70-74</td><td>≥102</td><td>86-94</td><td>28</td><td>39</td></tr>
+    <tr><td>紧身长裤</td><td>96-100</td><td>67</td><td>70-74</td><td>≥102</td><td>86-94</td><td>28</td><td>39</td></tr>
+  </table>
+
+  <!-- 泳裤 -->
+  <h4>泳裤</h4>
+  <table>
+    <tr><th>类别</th><th>裤长</th><th>腰围(橡筋)</th><th>腰围拉量</th><th>臀围</th><th>前浪</th><th>后浪</th></tr>
+    <tr><td>三角泳裤</td><td>19-20</td><td>72±</td><td>≥102</td><td>/</td><td>/</td><td>/</td></tr>
+    <tr><td>紧身泳裤(高弹)</td><td>28-42</td><td>70-74</td><td>≥102</td><td>88-92</td><td>26</td><td>34</td></tr>
+    <tr><td>宽松沙滩裤</td><td>46-50</td><td>72-76</td><td>≥102</td><td>108-112</td><td>31</td><td>40</td></tr>
+  </table>
+  <div class="highlight-box">
+    <strong>度量方法：</strong>三角裤裤长：平铺前腰中至浪底平度；三角裤臀围：侧脚口顶边至边平量；四角裤裤长：侧腰顶度至脚口；四角裤臀围：侧腰顶下18cm三点V量。
+  </div>
+
+  <h3>6.4 常规男装跳码规则</h3>
+  <p><strong>常规男装上衣</strong>——以M码为基码，样衣部位的对应尺码及跳码规则如下（单位：cm）。</p>
+  <p><strong>常规男装裤子</strong>——以M码为基码，样衣部位的对应尺码及跳码规则如下（单位：cm）。</p>
+  <div class="highlight-box">
+    <strong>说明：</strong>跳码规则详细图表请参考原PDF文档第17-18页。
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>TEMU跨境电商管控文件 · 常规男装审版注意事项 · 240610</p>
+  <p>本网页由PDF文档转换生成，仅供参考，具体标准以最新版PDF文档为准</p>
+</div>
+
+</div>
+
+<button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+
+</body>
+</html>
